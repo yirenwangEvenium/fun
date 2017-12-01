@@ -5,7 +5,7 @@ import { Redirect } from 'react-router'
 
 import './css/Login.css';
 
-const style = {
+const styleButton = {
     margin: 12,
   };
   
@@ -59,7 +59,7 @@ export class Login extends Component {
                         onChange={ (e) => this.handleChange(e, 'password') }
                     />
                     <br />
-                    <Button raised color="primary" style={style} onClick={this.handleSubmit} type="submit"> Login </Button> <br />
+                    <Button raised color="primary" style={styleButton} onClick={this.handleSubmit} type="submit"> Login </Button> <br />
                     <a href="#"> Mot de Passe oublié </a>
                     <a href="#"> Crée mon compte</a>
                 </form>

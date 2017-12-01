@@ -11,7 +11,7 @@ import './css/App.css';
 import { Switch, Route } from 'react-router-dom'
 
 
-import { Header } from './header';
+import Header from './header';
 import { Home }  from './home';
 import { Landing } from './landing';
 
