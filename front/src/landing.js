@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-import Paper from 'material-ui/Paper';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
+import Button from 'material-ui/Button';
+
 
 export class Landing extends Component {
     render() {
         return (
-            <div>
-                <Paper>
-                    <Menu>
-                        <MenuItem primaryText="Refresh" onClick = {() => console.log('hello')}/>
-                        <MenuItem primaryText="Settings"/>
-                        <MenuItem primaryText="Sign out"/>
-                    </Menu>
-                </Paper>
+            <div className="vertical_center">
+                <Button raised label="Utilisateurs" onClick={this.handleSubmit} fullWidth={true}/>
+                <Button raised label="Cartes" onClick={this.handleSubmit} fullWidth={true}/>
+                <Button raised label="Données Brut" onClick={this.handleSubmit} fullWidth={true}/>
             </div>
         )
     }

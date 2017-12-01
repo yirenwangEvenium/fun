@@ -3,17 +3,31 @@
 }
 
 .App-logo {
-  height: 20px;
+  height: 30px;
+}
+
+.App-title {
+  font-size: 4vw;
+  margin-right: auto;
 }
 
 .App-header {
   background-color: #222;
   height: 20%;
   color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center
+
 }
 
-.App-title {
-  font-size: 1.5em;
+
+.vertical_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 a {

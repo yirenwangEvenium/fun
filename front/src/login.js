@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { Redirect } from 'react-router'
 
 import './css/Login.css';
@@ -45,9 +45,21 @@ export class Login extends Component {
         return (
             <div className="Login">
                 <form onSubmit = { this.onSubmit }>
-                    <TextField hintText="Email" value={this.state.email} onChange={ (e) => this.handleChange(e, 'email') }/><br />
-                    <TextField hintText="Mot de Passe" type="password" value={this.state.password} onChange={ (e) => this.handleChange(e, 'password') }/><br />
-                    <RaisedButton label="Login" primary={true} style={style} onClick={this.handleSubmit} type="submit"/> <br />
+                    <TextField
+                        label="Email"
+                        placeholder="Email"
+                        value={this.state.email} 
+                        onChange={ (e) => this.handleChange(e, 'email') }
+                    />
+                    <br />
+                    <TextField
+                        label="Mot de Passe"
+                        placeholder="Mot de Passe"
+                        value={this.state.password} 
+                        onChange={ (e) => this.handleChange(e, 'password') }
+                    />
+                    <br />
+                    <Button raised color="primary" style={style} onClick={this.handleSubmit} type="submit"> Login </Button> <br />
                     <a href="#"> Mot de Passe oublié </a>
                     <a href="#"> Crée mon compte</a>
                 </form>
