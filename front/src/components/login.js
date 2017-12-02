@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import { Redirect } from 'react-router'
 
-import './css/Login.css';
+import '../css/Login.css';
 
 const styleButton = {
     margin: 12,
@@ -50,6 +50,7 @@ export class Login extends Component {
                         placeholder="Email"
                         value={this.state.email} 
                         onChange={ (e) => this.handleChange(e, 'email') }
+                        className = 'text_field'
                     />
                     <br />
                     <TextField
@@ -57,6 +58,7 @@ export class Login extends Component {
                         placeholder="Mot de Passe"
                         value={this.state.password} 
                         onChange={ (e) => this.handleChange(e, 'password') }
+                        className = 'text_field'                        
                     />
                     <br />
                     <Button raised color="primary" style={styleButton} onClick={this.handleSubmit} type="submit"> Login </Button> <br />

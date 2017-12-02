@@ -11,10 +11,10 @@ import './css/App.css';
 import { Switch, Route } from 'react-router-dom'
 
 
-import Header from './header';
-import { Home }  from './home';
-import { Landing } from './landing';
-
+import Header from './components/header';
+import { Home }  from './components/home';
+import { Landing } from './components/landing';
+import Users from './components/users';
 
 const theme = createMuiTheme({
   palette: {
@@ -36,11 +36,12 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>      
         <div className="App">
-          <Header/>
+          <Header isAuth={true}/>
           <Switch>
             <Route exact path='/' render={(props) => ( <Home {...props} isAuth = {this.state.isAuth}/> )}/>
             <Route path='/home' component={Landing}/>
-          </Switch>
+            <Route path='/users' component={Users}/>
+            </Switch>
 
         </div>
       </MuiThemeProvider>

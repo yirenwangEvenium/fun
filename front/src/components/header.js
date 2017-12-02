@@ -6,14 +6,19 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
+import HomeIcon from 'material-ui-icons/Home';
+
+import {
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
 const styles = theme => ({
   root: {
     width: '100%',
   },
   flex: {
-    flex: 1,
+      flex: 2
   },
   menuButton: {
     marginLeft: -12,
@@ -22,18 +27,24 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes } = props;
+  const { classes, isAuth } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+          <Route render={({ history}) => (
+            <IconButton className={classes.menuButton} 
+                        color="contrast" 
+                        aria-label="Menu"
+                        onClick={() => { history.push('/home') }} >
+              <HomeIcon />
+            </IconButton>        
+          )} />
+
           <Typography type="title" color="inherit" className={classes.flex}>
             Title
           </Typography>
-          <Button color="contrast">Login</Button>
+          {isAuth ? <Button color="contrast">Logout</Button> : <Button color="contrast">Login</Button>}
         </Toolbar>
       </AppBar>
     </div>
